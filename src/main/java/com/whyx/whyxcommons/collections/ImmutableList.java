@@ -81,8 +81,7 @@ public class ImmutableList<T> {
      * @return {@link List} copy of this item.
      */
     public List<T> mutableCopy() {
-        List<T> mutableCopy = new ArrayList<>(this.mutableList);
-        return mutableCopy;
+        return new ArrayList<>(this.mutableList);
     }
 
 }
