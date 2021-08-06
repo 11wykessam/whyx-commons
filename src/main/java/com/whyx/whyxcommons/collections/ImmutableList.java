@@ -1,5 +1,6 @@
 package com.whyx.whyxcommons.collections;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static java.util.Objects.requireNonNull;
@@ -72,6 +73,16 @@ public class ImmutableList<T> {
      */
     public T get(int i) {
         return mutableList.get(i);
+    }
+
+    /**
+     * Get a mutable copy of the list.
+     *
+     * @return {@link List} copy of this item.
+     */
+    public List<T> mutableCopy() {
+        List<T> mutableCopy = new ArrayList<>(this.mutableList);
+        return mutableCopy;
     }
 
 }
