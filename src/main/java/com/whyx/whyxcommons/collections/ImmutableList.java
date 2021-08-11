@@ -2,6 +2,7 @@ package com.whyx.whyxcommons.collections;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 import static java.util.Objects.requireNonNull;
 
@@ -82,6 +83,15 @@ public class ImmutableList<T> {
      */
     public List<T> mutableCopy() {
         return new ArrayList<>(this.mutableList);
+    }
+
+    /**
+     * Return a stream of elements in the list.
+     *
+     * @return {@link Stream} of immutable lists' elements.
+     */
+    public Stream<T> stream() {
+        return this.mutableList.stream();
     }
 
 }
