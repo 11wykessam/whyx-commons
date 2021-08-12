@@ -15,11 +15,11 @@ public class ImmutableList<T> {
     // the underlying list.
     private final List<T> mutableList;
 
-    private ImmutableList(List<T> list) {
+    private ImmutableList(final List<T> list) {
         this.mutableList = list;
     }
 
-    public static <T> ImmutableList<T> ofList(List<T> list) {
+    public static <T> ImmutableList<T> ofList(final List<T> list) {
         requireNonNull(list, "list must not be null");
         return new ImmutableList<>(list);
     }
@@ -48,7 +48,7 @@ public class ImmutableList<T> {
      * @param object {@link T} object being looked for.
      * @return boolean depending on whether the item is found.
      */
-    public boolean contains(T object) {
+    public boolean contains(final T object) {
         requireNonNull(object, "object must not be null");
         return mutableList.contains(object);
     }
@@ -60,7 +60,7 @@ public class ImmutableList<T> {
      * @return boolean depending on whether the two objects are equal.
      */
     @Override
-    public boolean equals(Object object) {
+    public boolean equals(final Object object) {
         requireNonNull(object, "object must not be null");
         return object instanceof ImmutableList && this.mutableList.equals(((ImmutableList<?>) object).mutableList);
     }
@@ -71,7 +71,7 @@ public class ImmutableList<T> {
      * @param i index of item.
      * @return {@link T} object.
      */
-    public T get(int i) {
+    public T get(final int i) {
         return mutableList.get(i);
     }
 
