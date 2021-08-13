@@ -36,7 +36,7 @@ public class ImmutableListCollector<T> implements Collector<T, List<T>, Immutabl
 
     @Override
     public Function<List<T>, ImmutableList<T>> finisher() {
-        return list -> ImmutableList.ofList(list);
+        return ImmutableList::ofList;
     }
 
     @Override
